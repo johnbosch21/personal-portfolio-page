@@ -1,0 +1,13 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    font-size: calc(1em + 1vh);
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
+
+@media only screen and (max-width: 815px) and (orientation: portrait) {
+}
