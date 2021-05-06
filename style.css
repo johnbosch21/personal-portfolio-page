@@ -5,16 +5,12 @@
 }
 
 :root {
-    font-size: calc(1em + 1vh);
+    font-size: 3vmin;
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
 }
 
 [id] {
     scroll-margin-top: 1.5rem;
-}
-
-main {
-    min-height: 100vh;
 }
 
 /* navigation section */
@@ -55,6 +51,7 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 .page-header {
@@ -112,22 +109,43 @@ main {
 /* projects section */
 
 .projects {
+    position: relative;
     border: 1px black solid;
     max-width: 100%;
     width: 50rem;
+    min-height: 100vh;
     margin: 0 auto;
-    padding-top: 0.25rem;
+    padding: 1rem 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: flex-start;
     align-content: flex-start;
-    gap: 0.25rem;
+    gap: 0.5rem;
+}
+
+.section-header {
+    flex-basis: 100%;
+    margin-bottom: 1rem;
+}
+
+.section-header h2 {
+    font-size: 1rem;
+    text-align: center;
+}
+
+.section-header hr {
+    width: 45%;
+    margin: 0 auto;
+    margin-top: 0.2rem;
+    color: black;
+    background-color: black;
+    height: 0.15rem;
 }
 
 .project-tile {
     border: 1px black solid;
-    flex-basis: calc(48rem/3);
+    flex-basis: calc(96%/3);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -138,12 +156,18 @@ main {
     order: 2;
     background-color: black;
     width: 100%;
-    padding: 1rem;
+    padding: 0.5rem;
     text-decoration: none;
-    height: 3rem;
+    height: 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.project-title h3 {
+    text-align: center;
+    font-size: 0.8rem;
+    color: white;
 }
 
 .hover-show {
@@ -151,15 +175,9 @@ main {
 
 }
 
-.project-title:hover .hover-show {
+.project-tile:hover .hover-show {
     display: inline;
     color: yellow;
-}
-
-.project-title h2 {
-    text-align: center;
-    font-size: 0.8rem;
-    color: white;
 }
 
 .image {
@@ -172,22 +190,52 @@ main {
     height: auto;
 }
 
-
-@media only screen and (max-width: 1024px) and (orientation: portrait) {
-    .project-tile {
-        flex-basis: calc(96%/3);
-    }
+.show-all {
+    border: black 1px solid;
+    width: 100%;
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2rem;
 }
 
-@media only screen and (max-width: 601px) and (orientation: portrait) {
+.show-all-btn {
+    text-align: center;
+    text-decoration: none;
+    background: black;
+    color: white;
+    padding: 0.5rem;
+}
+
+/* about me and contact section */
+
+.about-me-contact {
+    border: black 1px solid;
+    min-height: 100vh;
+}
+
+
+
+
+@media only screen and (max-width: 815px) and (orientation: portrait) {
     .project-tile {
         flex-basis: calc(96%/2);
     }
+
+    .show-all-btn {
+        width: 100%;
+    }
 }
 
-@media only screen and (max-width: 320px) and (orientation: portrait) {
+@media only screen and (max-width: 375px) and (orientation: portrait) {
     .project-tile {
         flex-basis: 100%;
+        margin-bottom: 3rem;
+    }
+
+    .project-tile:nth-child(7) {
+        margin-bottom: 0rem;
     }
 }
 
