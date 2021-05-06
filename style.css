@@ -9,6 +9,14 @@
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
 }
 
+[id] {
+    scroll-margin-top: 1.5rem;
+}
+
+main {
+    min-height: 100vh;
+}
+
 /* navigation section */
 
 .navbar {
@@ -19,11 +27,7 @@
     display: flex;
     align-items: center;
     background: cadetblue;
-}
-
-.nav-name {
-    flex: 1;
-    font-size: 0.8rem;
+    z-index: 999;
 }
 
 .navbar ul {
@@ -31,7 +35,7 @@
     height: 100%;
     list-style: none;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
 }
 
@@ -81,8 +85,8 @@
 }
 
 .down-button {
-    position: relative;
-    top: 10rem;
+    position: absolute;
+    top: 90%;
 }
 
 /* welcome icon properties */
@@ -110,24 +114,63 @@
 .projects {
     border: 1px black solid;
     max-width: 100%;
-    width: 30rem;
+    width: 50rem;
     margin: 0 auto;
+    padding-top: 0.25rem;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: flex-start;
+    gap: 0.25rem;
 }
 
 .project-tile {
-    flex-basis: 50%;
+    border: 1px black solid;
+    flex-basis: calc(48rem/3);
     display: flex;
     flex-direction: column;
+    align-items: center;
+    height: auto;
+}
+
+.project-title {
+    order: 2;
+    background-color: black;
+    width: 100%;
+    padding: 1rem;
+    text-decoration: none;
+}
+
+.hover-show {
+    display: none;
+
+}
+
+.project-title:hover .hover-show {
+    display: inline;
+    color: yellow;
+}
+
+.project-title h2 {
+    text-align: center;
+    font-size: 0.8rem;
+    color: white;
+}
+
+.image {
+    text-decoration: none;
+    margin-bottom: -0.3rem;
+}
+
+.project-snapshot {
+    width: 100%;
+    height: auto;
 }
 
 
 
 
 @media only screen and (max-width: 815px) and (orientation: portrait) {
-    .page-header h1 {
-        font-size: 2rem;
-        text-align: center;
-    }
+    
 }
