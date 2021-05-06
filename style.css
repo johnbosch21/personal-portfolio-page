@@ -83,7 +83,7 @@
 
 .down-button {
     position: absolute;
-    top: 90%;
+    top: 80%;
 }
 
 /* welcome icon properties */
@@ -113,7 +113,6 @@
     border: 1px black solid;
     max-width: 100%;
     width: 50rem;
-    min-height: 100vh;
     margin: 0 auto;
     padding: 1rem 0;
     display: flex;
@@ -135,7 +134,7 @@
 }
 
 .section-header hr {
-    width: 45%;
+    width: 14rem;
     margin: 0 auto;
     margin-top: 0.2rem;
     color: black;
@@ -212,19 +211,13 @@
 
 .about-me-contact {
     border: black 1px solid;
-    min-height: 100vh;
+
 }
-
-
 
 
 @media only screen and (max-width: 815px) and (orientation: portrait) {
     .project-tile {
         flex-basis: calc(96%/2);
-    }
-
-    .show-all-btn {
-        width: 100%;
     }
 }
 
