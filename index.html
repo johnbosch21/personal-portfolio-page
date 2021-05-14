@@ -43,7 +43,7 @@
                 <h2>These are some of my projects</h2>
                 <div class="underline"></div>
             </header>
-            
+
             <div class="project-tile">
                 <a href="https://johnbosch21.github.io/tribute-page" target="_blank" class="project-title">
                     <h3>
@@ -122,49 +122,79 @@
             <h3>Hello World!</h3>
             <img src="./images/avatar.png" alt="" class="avatar">
             <div class="about-text-container">
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt, harum.</p>
+                <p class="about-text">
+                    I am currently studying full-stack web development with the help of <a href="https://theodinproject.com" class="about-link" target="_blank">The Odin Project</a> and <a href="https://freecodecamp.org" class="about-link" target="_blank">FreeCodeCamp</a>.
+                </p>
+                <p class="about-text">
+                    I am working towards the goal of honing my coding skills until I can build and participate in awesome projects.
+                </p>
             </div>
             <div class="skills">
-                <i class="fab fa-html5"></i>
-                <i class="fab fa-css3-alt"></i>
-                <i class="fab fa-js-square"></i>
-                <i class="fas fa-gem"></i>
-                <i class="fab fa-bootstrap"></i>
-                <i class="fab fa-react"></i>
-                <i class="fab fa-node-js"></i>
-                <i class="fab fa-mdb"></i>
+                <div class="skill1 skill">                
+                    <i class="fab fa-html5 skills-icon"></i>
+                    <p class="skill-name">HTML</p>
+                </div>
+                <div class="skill2 skill">                
+                    <i class="fab fa-css3-alt skills-icon"></i>
+                    <p class="skill-name">CSS</p>
+                </div>
+                <div class="skill3 skill">                
+                    <i class="fab fa-js-square skills-icon"></i>
+                    <p class="skill-name">JavaScript</p>
+                </div>
+                <div class="skill4 skill">                
+                    <i class="fas fa-gem skills-icon"></i>
+                    <p class="skill-name">Ruby</p>
+                </div>
+                <div class="skill5 skill">                
+                    <i class="fab fa-bootstrap skills-icon"></i>
+                    <p class="skill-name">Bootstrap</p>
+                </div>
+                <div class="skill6 skill">                
+                    <i class="fab fa-react skills-icon"></i>
+                    <p class="skill-name">React</p>
+                </div>
+                <div class="skill7 skill">                
+                    <i class="fab fa-node-js skills-icon"></i>
+                    <p class="skill-name">Node.js</p>
+                </div>
+                <div class="skill8 skill">                
+                    <i class="fab fa-mdb skills-icon"></i>
+                    <p class="skill-name">MongoDB</p>
+                </div>
             </div>
         </div>
         <div id="contact" class="contact">
-            <h3>Let's help each other!</h3>
-            <div>
-                <a href="" class="fas fa-file-pdf" target="_blank"></a>
-                <p>Download my Résumé</p>
+            <h3>Let's connect!</h3>
+            <div class="resume">
+                <a href="https://github.com/boschjmd" class="fas fa-file-pdf resume-icon" target="_blank">
+                    <span>Download my Résumé</span> 
+                </a>
             </div>
-            <form>
-                <div>
+            <form class="contact-form">
+                <div class="form-container">
                     <label for="name" id="name-label"></label>
                     <input type="text" name="name" id="name" placeholder="Name" class="form" required>
                 </div>
 
-                <div>
+                <div class="form-container">
                     <label for="email" id="email-label"></label>
                     <input type="email" name="email" id="email" placeholder="Email" class="form" required>
                 </div>
     
-                <div>
+                <div class="form-container">
                     <label for="suggestions"></label>
-                    <textarea name="suggestions" id="suggestions" placeholder="Your Message" class="form"></textarea>
+                    <textarea name="suggestions" id="suggestions" placeholder="Your Message" class="form" required></textarea>
                 </div>
 
-                <div>
+                <div class="form-container">
                     <button type="submit" id="submit" class="submit">Send</button>
                 </div>
             </form>
         </div>
     </section>
 
-    <footer>
+    <footer class="footer">
         <div>
             <a href="https://github.com/johnbosch21" class="fa fa-github" target="_blank"></a>
             <a href="#" class="fa fa-codepen"></a>
@@ -172,7 +202,6 @@
             <a href="#" class="fa fa-linkedin"></a>
         </div>
         <p>©2021 John Bosch</p>
-
     </footer>
 </body>
 

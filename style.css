@@ -5,7 +5,7 @@
 }
 
 :root {
-    font-size: 3vmin;
+    font-size: calc(0.8em + 1vh);
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
     --blue: #8FB6D0;
     --red: #D0A98F;
@@ -13,11 +13,12 @@
 }
 
 [id] {
-    scroll-margin-top: 2.5rem;
+    scroll-margin-top: 2rem;
 }
 
 body {
     background: var(--black);
+    width: 100vw;
 }
 
 /* navigation section */
@@ -75,6 +76,7 @@ body {
     position: relative;
     background: var(--black);
     color: var(--blue);
+    border-bottom: solid var(--red) 0.1rem;
 }
 
 .page-header {
@@ -185,7 +187,7 @@ body {
     max-width: 100%;
     width: 50rem;
     margin: 0 auto;
-    padding: 1rem 0;
+    padding: 1rem 0 4rem 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -216,7 +218,7 @@ body {
 
 .project-tile {
     padding: 0.15rem;
-    background: var(--red);
+    background: var(--blue);
     border-radius: 0.1rem;
     flex-basis: calc(96%/3);
     display: flex;
@@ -224,6 +226,10 @@ body {
     align-items: center;
     height: auto;
     margin: 0.2rem;
+}
+
+.project-tile:hover {
+    background: var(--red);
 }
 
 .project-title {
@@ -291,77 +297,224 @@ body {
 
 .show-all-btn:hover {
     background: var(--blue);
-    /* transform: scale(1.125); */
+    transform: scale(1.125);
 }
 
 /* about me and contact section */
 
 .about-me-contact {
-    border: 1px black solid;
-    width: 100%;
-    height: 100vh;
-    padding: 1rem 0;
+    width: 100vw;
     display: grid;
-    grid-template-columns: [column-start] 1fr 1fr [column-end];
+    grid-template-columns: [column-start] 1fr 1.25fr [column-end];
     align-content: start;
+    background: var(--black);
+    border-top: solid var(--red) 0.1rem;
 }
 
 .about-header {
     grid-column: 1 / -1;
-    place-self: center;
+    place-self: stretch;
+    text-align: center;
+    background: var(--black);
+    padding: 2rem;
 }
 
 .about-header h2 {
     font-size: 2rem;
+    color: var(--blue);
+    font-weight: 400;
 }
 
 .about-me {
-    border: 1px black solid;
+    background: var(--blue);
     grid-column: 1 / span 1;
     display: grid;
-    grid-template-rows: auto 10rem auto auto;
-    gap: 1rem;
+    grid-template-rows: 8rem 8rem auto auto;
+    gap: 1.5rem;
     padding: 1rem;
+    clip-path: polygon(0 0, 100% 0, 88% 100%, 0% 100%);
 }
 
 .about-me > h3 {
     text-align: center;
+    color: var(--black);
+    font-weight: 400;
+    align-self: center;
+}
+
+.about-text-container {
+    justify-self: center;
+    align-self: center;
+    width: 50%;
+}
+
+.about-text {
+    color: var(--black);
+    font-size: 0.8rem;
+    font-weight: 300;
+    line-height: 1.5rem;
+}
+
+.about-text:first-child {
+    margin-bottom: 1rem;
+}
+
+.about-link {
+    text-decoration: none;
+    color: var(--black);
+    font-weight: 400;
+}
+
+.about-link:hover {
+    text-decoration: underline;
 }
 
 .avatar {
     width: auto;
-    height: 10rem;
+    height: 8rem;
     border-radius: 50%;
     justify-self: center;
 }
 
+.skills {
+    max-width: 70%;
+    width: 20rem;
+    justify-self: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(4rem, 1fr));
+    grid-auto-flow: dense;
+    align-content: start;
+    gap: 0.5rem;
+}
+
+.skill {
+    display: flex;
+    align-items: center;
+    border: solid 0.1rem var(--black);
+    padding: 0.3rem;
+    border-radius: 0.7rem;
+    height: 2rem;
+}
+
+.skills-icon {
+    color: var(--black);
+    font-size: 1rem;
+    margin-right: 0.3rem
+}
+
+.skill-name {
+    font-size: 0.5rem;
+}
+
 .contact {
-    border: 1px black solid;
+    background: var(--black);
     grid-column: span 1 / -1;
     display: grid;
-    grid-template-rows: auto auto 1fr;
-    gap: 1rem;
+    grid-template-rows: 8rem auto 1fr;
+    gap: 1.5rem;
     padding: 1rem;
 }
 
 .contact > h3 {
     text-align: center;
+    color: var(--blue);
+    font-weight: 400;
+    align-self: center;
 }
 
+.resume {
+    justify-self: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 3rem;
+}
 
+.resume-icon {
+    flex-basis: 100%;
+    font-size: 4rem;
+    color: var(--blue);
+    margin-top: 1rem;
+}
 
+.resume-icon:hover {
+    color: var(--red);
+}
+
+.resume-icon span {
+    display: block;
+    font-family: 'Roboto', Arial, Helvetica;
+    font-size: 0.8rem;
+    font-weight: 300;
+    margin-top: 1rem;
+}
+
+.contact-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-container {
+    width: 80%;
+    margin-bottom: 1rem;
+}
+
+.form {
+    font-family: 'Roboto', Arial, Helvetica;
+    font-size: 0.8rem;
+    height: 1.5rem;
+    width: 100%;
+    border: solid 0.1rem var(--blue);
+}
+
+.form:focus {
+    outline: 0;
+    border: solid 0.1rem var(--red);
+}
+
+.form-container textarea {
+    height: 10rem;
+}
+
+.submit {
+    display: block;
+    margin: 0 auto;
+    font-family: 'Roboto', Arial, Helvetica;
+    font-size: 0.8rem;
+    font-weight: 300;
+    height: 2rem;
+    width: 4rem;
+    background: var(--red);
+    border: 0;
+}
+
+.submit:hover {
+    background: var(--blue);
+    transform: scale(1.125);
+}
+
+.footer {
+    min-height: 20vh;
+}
 
 @media only screen and (max-width: 815px) and (orientation: portrait) {
     .project-tile {
-        flex-basis: calc(96%/2);
+        flex-basis: 47%;
     }
 
     .about-me, .contact {
         grid-column: 1 / -1;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+
+    .form-container {
+        width: 100%;
     }
 }
 
-@media only screen and (max-width: 500px) and (orientation: portrait) {
+@media only screen and (max-width: 400px) and (orientation: portrait) {
     .project-tile {
         flex-basis: 100%;
         margin-bottom: 1rem;
