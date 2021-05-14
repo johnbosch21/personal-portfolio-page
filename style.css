@@ -187,7 +187,7 @@ html, body {
     max-width: 100%;
     width: 50rem;
     margin: 0 auto;
-    padding: 1rem 0 4rem 0;
+    padding: 4rem 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -499,7 +499,24 @@ html, body {
 }
 
 .footer {
-    min-height: 20vh;
+    min-height: 5rem;
+    border-top: 0.1rem solid var(--red);
+    padding: 1rem;
+}
+
+.footer .profile-links > a{
+    margin: 0 1.5rem;
+}
+
+.footer .profile-links {
+    margin-bottom: 1rem;
+}
+
+.footer p {
+    text-align: center;
+    font-weight: 300;
+    color: var(--blue);
+    font-size: 0.8rem;
 }
 
 @media only screen and (max-width: 815px) and (orientation: portrait) {
