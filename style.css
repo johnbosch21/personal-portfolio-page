@@ -7,10 +7,13 @@
 :root {
     font-size: 3vmin;
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    --blue: #8FB6D0;
+    --red: #D0A98F;
+    --black: #001211;
 }
 
 [id] {
-    scroll-margin-top: 1.5rem;
+    scroll-margin-top: 2rem;
 }
 
 /* navigation section */
@@ -18,11 +21,10 @@
 .navbar {
     position: fixed;
     width: 100%;
-    height: 1rem;
-    border: 1px black solid;
+    height: 2rem;
     display: flex;
     align-items: center;
-    background: cadetblue;
+    background: var(--red, #D0A98F);
     z-index: 999;
 }
 
@@ -31,7 +33,7 @@
     height: 100%;
     list-style: none;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
 }
 
@@ -40,6 +42,13 @@
     text-align: center;
     text-decoration: none;
     margin: 0 0.5rem;
+    color: var(--black, #001211);
+}
+
+.nav-link:hover {
+    text-decoration: underline  0.2rem var(--red, #D0A98F);
+    text-underline-position: under;
+    text-underline-offset: 0.7rem;
 }
 
 /* welcome section */
@@ -52,6 +61,8 @@
     justify-content: center;
     align-items: center;
     position: relative;
+    background: var(--black, #001211);
+    color: var(--blue, #8FB6D0);
 }
 
 .page-header {
@@ -60,7 +71,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 1px black solid;
     margin: 1rem;
 }
 
@@ -76,7 +86,6 @@
 
 .profile-links {
     width: 100%;
-    border: 1px black solid;
     display: flex;
     justify-content: center;
 }
@@ -84,32 +93,59 @@
 .down-button {
     position: absolute;
     top: 80%;
+    animation: rolling;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in;
 }
+
+@keyframes rolling {
+    0% {
+        top: 80%;
+    }
+
+    50% {
+        opacity: 0.1;
+        top: 83%;
+    }
+
+    100% {
+        top: 80%;
+    }
+}
+
 
 /* welcome icon properties */
 
-.fa {
+.fa, .fas {
     text-align: center;
     text-decoration: none;
 }
 
 .fa-chevron-down {
-    transform: scale(3);
-    color: lightgray;
+    font-size: 3rem;
+    color: #8FB6D0;
     background: none;
 }
+
 
 .profile-links a {
     display: block;
     transform: scale(1.5);
-    color:#495057;;
+    color:#8FB6D0;
     margin: 0 0.5rem;
+    cursor: pointer;
+}
+
+.profile-links a:hover {
+    color: #D0A98F;
+    transform: scale(2);
 }
 
 /* projects section */
 
 .projects {
-    position: relative;
+    /* position: relative; */
     border: 1px black solid;
     max-width: 100%;
     width: 50rem;
@@ -142,13 +178,16 @@
 }
 
 .project-tile {
-    border: 1px black solid;
+    /* border: 1px black solid; */
+    padding: 0.15rem;
     flex-basis: calc(96%/3);
     display: flex;
     flex-direction: column;
     align-items: center;
     height: auto;
     margin: 0.2rem;
+    background: antiquewhite;
+    box-shadow: 0px 0px 5px rgba(250, 250, 250, 0.1);
 }
 
 .project-title {
@@ -205,23 +244,76 @@
     background: black;
     color: white;
     padding: 0.5rem;
-} */
+}
 
 /* about me and contact section */
 
 .about-me-contact {
-    border: black 1px solid;
-
+    border: 1px black solid;
+    width: 100%;
+    height: 100vh;
+    padding: 1rem 0;
+    display: grid;
+    grid-template-columns: [column-start] 1fr 1fr [column-end];
+    align-content: start;
 }
+
+.about-header {
+    grid-column: 1 / -1;
+    place-self: center;
+}
+
+.about-header h2 {
+    font-size: 2rem;
+}
+
+.about-me {
+    border: 1px black solid;
+    grid-column: 1 / span 1;
+    display: grid;
+    grid-template-rows: auto 10rem auto auto;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.about-me > h3 {
+    text-align: center;
+}
+
+.avatar {
+    width: auto;
+    height: 10rem;
+    border-radius: 50%;
+    justify-self: center;
+}
+
+.contact {
+    border: 1px black solid;
+    grid-column: span 1 / -1;
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.contact > h3 {
+    text-align: center;
+}
+
+
 
 
 @media only screen and (max-width: 815px) and (orientation: portrait) {
     .project-tile {
         flex-basis: calc(96%/2);
     }
+
+    .about-me, .contact {
+        grid-column: 1 / -1;
+    }
 }
 
-@media only screen and (max-width: 375px) and (orientation: portrait) {
+@media only screen and (max-width: 500px) and (orientation: portrait) {
     .project-tile {
         flex-basis: 100%;
         margin-bottom: 3rem;
