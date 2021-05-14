@@ -535,7 +535,7 @@ html, body {
     }
 }
 
-@media only screen and (max-width: 400px) and (orientation: portrait) {
+@media only screen and (max-width: 415px) and (orientation: portrait) {
     .project-tile {
         flex-basis: 100%;
         margin-bottom: 1rem;
