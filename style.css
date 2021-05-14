@@ -333,6 +333,7 @@ html, body {
     gap: 1.5rem;
     padding: 1rem;
     clip-path: polygon(0 0, 100% 0, 88% 100%, 0% 100%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 88% 100%, 0% 100%);
     justify-content: center;
 }
 
@@ -509,6 +510,7 @@ html, body {
     .about-me, .contact {
         grid-column: 1 / -1;
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
     }
 
     .form-container {
