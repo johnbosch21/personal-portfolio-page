@@ -13,7 +13,11 @@
 }
 
 [id] {
-    scroll-margin-top: 2rem;
+    scroll-margin-top: 2.5rem;
+}
+
+body {
+    background: var(--black);
 }
 
 /* navigation section */
@@ -24,7 +28,7 @@
     height: 2rem;
     display: flex;
     align-items: center;
-    background: var(--red, #D0A98F);
+    background: var(--red);
     z-index: 999;
 }
 
@@ -37,16 +41,24 @@
     align-items: center;
 }
 
+.my-name {
+    margin-left: 0.5rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--black);
+}
+
 .nav-link {
     font-size: 0.8rem;
+    font-weight: 300;
     text-align: center;
     text-decoration: none;
     margin: 0 0.5rem;
-    color: var(--black, #001211);
+    color: var(--black);
 }
 
 .nav-link:hover {
-    text-decoration: underline  0.2rem var(--red, #D0A98F);
+    text-decoration: underline  0.2rem var(--red);
     text-underline-position: under;
     text-underline-offset: 0.7rem;
 }
@@ -61,8 +73,8 @@
     justify-content: center;
     align-items: center;
     position: relative;
-    background: var(--black, #001211);
-    color: var(--blue, #8FB6D0);
+    background: var(--black);
+    color: var(--blue);
 }
 
 .page-header {
@@ -76,11 +88,14 @@
 
 .page-header h1 {
     font-size: 3rem;
+    font-weight: 400;
     text-align: center;
 }
 
 .page-header p {
     font-size: 0.8rem;
+    font-weight: 300;
+    color: var(--red);
     text-align: center;
 }
 
@@ -114,6 +129,24 @@
     }
 }
 
+.down-button:hover {
+    animation: stop;
+    animation-duration: 500ms;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+}
+
+@keyframes stop {
+    0% {
+        top: 81.5%
+    }
+
+    100% {
+        opacity: 1;
+        top: 83%;
+    }
+}
 
 /* welcome icon properties */
 
@@ -124,29 +157,31 @@
 
 .fa-chevron-down {
     font-size: 3rem;
-    color: #8FB6D0;
+    color: var(--blue);
     background: none;
 }
 
+.fa-chevron-down:hover {
+    color: var(--red);
+}
 
 .profile-links a {
     display: block;
     transform: scale(1.5);
-    color:#8FB6D0;
+    color: var(--blue);
     margin: 0 0.5rem;
     cursor: pointer;
 }
 
 .profile-links a:hover {
-    color: #D0A98F;
-    transform: scale(2);
+    color: var(--red);
+    transform: scale(1.75);
 }
 
 /* projects section */
 
 .projects {
-    /* position: relative; */
-    border: 1px black solid;
+    background: var(--black);
     max-width: 100%;
     width: 50rem;
     margin: 0 auto;
@@ -165,34 +200,37 @@
 
 .section-header h2 {
     font-size: 1rem;
+    font-weight: 400;
+    color: var(--blue);
     text-align: center;
 }
 
-.section-header hr {
+.underline {
     width: 14rem;
     margin: 0 auto;
     margin-top: 0.2rem;
-    color: black;
-    background-color: black;
-    height: 0.15rem;
+    background-color: var(--red);
+    border-radius: 1rem;
+    height: 0.125rem;
 }
 
 .project-tile {
-    /* border: 1px black solid; */
     padding: 0.15rem;
+    background: var(--red);
+    border-radius: 0.1rem;
     flex-basis: calc(96%/3);
     display: flex;
     flex-direction: column;
     align-items: center;
     height: auto;
     margin: 0.2rem;
-    background: antiquewhite;
-    box-shadow: 0px 0px 5px rgba(250, 250, 250, 0.1);
 }
 
 .project-title {
     order: 2;
-    background-color: black;
+    background-color: var(--black);
+    border-bottom-left-radius: 0.1rem;
+    border-bottom-right-radius: 0.1rem;
     width: 100%;
     padding: 0.5rem;
     text-decoration: none;
@@ -205,7 +243,8 @@
 .project-title h3 {
     text-align: center;
     font-size: 0.8rem;
-    color: white;
+    font-weight: 300;
+    color: var(--blue);
 }
 
 .hover-show {
@@ -215,21 +254,22 @@
 
 .project-tile:hover .hover-show {
     display: inline;
-    color: yellow;
+    color: var(--red);
 }
 
 .image {
+    width: 100%;
     text-decoration: none;
     margin-bottom: -0.3rem;
 }
 
 .project-snapshot {
+    border-radius: 0.1rem;
     width: 100%;
     height: auto;
 }
 
 .show-all {
-    border: black 1px solid;
     width: 100%;
     margin-top: 0.5rem;
     display: flex;
@@ -239,11 +279,19 @@
 }
 
 .show-all-btn {
+    font-size: 0.8rem;
+    font-weight: 300;
     text-align: center;
     text-decoration: none;
-    background: black;
-    color: white;
+    background: var(--red);
+    color: var(--black);
+    border-radius: 0.1rem;
     padding: 0.5rem;
+}
+
+.show-all-btn:hover {
+    background: var(--blue);
+    /* transform: scale(1.125); */
 }
 
 /* about me and contact section */
@@ -316,11 +364,16 @@
 @media only screen and (max-width: 500px) and (orientation: portrait) {
     .project-tile {
         flex-basis: 100%;
-        margin-bottom: 3rem;
+        margin-bottom: 1rem;
     }
 
     .project-tile:nth-child(7) {
         margin-bottom: 0rem;
     }
+
+    .project-title {
+        height: 3rem;
+    }
+
 }
 
